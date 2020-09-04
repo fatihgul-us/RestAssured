@@ -29,6 +29,8 @@ public class GoRestPostTests {
                 .extract().response().jsonPath().getInt("data.id");
     }
 
+
+
     @Test(dependsOnMethods = "creatingPost")
     public void getPostById() {
         given()
@@ -40,6 +42,8 @@ public class GoRestPostTests {
                 .body("data.id", equalTo(postId))
         ;
     }
+
+
 
     @Test(dependsOnMethods = "creatingPost")
     public void updatePostById() {
